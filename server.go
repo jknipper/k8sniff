@@ -383,11 +383,11 @@ func (p *Proxy) Handle(conn net.Conn, connectionID string) {
 			glog.V(4).Infof("[%s] Host found %s", connectionID, proxy.Host)
 		}
 	} else {
-		glog.V(6).Info("[%s] Parsed request without hostname", connectionID)
+		glog.V(6).Infof("[%s] Parsed request without hostname", connectionID)
 
 		proxy = p.Default
 		if proxy == nil {
-			glog.V(4).Info("[%s] No default proxy", connectionID)
+			glog.V(4).Infof("[%s] No default proxy", connectionID)
 			return
 		}
 	}
